@@ -1,3 +1,4 @@
+
 package controller;
 
 import model.Usuario;
@@ -5,6 +6,7 @@ import model.Usuario;
 
 import java.util.ArrayList;
 import model.Usuario;
+import java.util.List;
 
 public class UsuarioController {
     private ArrayList<Usuario> usuarios;
@@ -58,4 +60,22 @@ public class UsuarioController {
             System.out.println("Usuario: " + usuarioExistente);
         }
     }
+    
+    public Usuario buscarPorMatricula(String matricula) {
+        for (Usuario usuario : usuarios) {
+            if (usuario.getMatricula().equalsIgnoreCase(matricula)) {
+                return usuario;
+            }
+        }
+        return null;
+    }
+
+    public List<Usuario> getUsuarios() {
+        return usuarios;
+    }
+
+	public void adicionarUsuario(Usuario usuario) {
+		// TODO Auto-generated method stub
+		
+	}
 }

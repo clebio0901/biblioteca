@@ -1,7 +1,7 @@
 package model;
 
 public abstract class Obra {
-	private int codigo;
+	private String codigo;
 	public String titulo;
 	private String autor;
 	private int anoPublicacao;
@@ -9,23 +9,23 @@ public abstract class Obra {
 	protected String type;
 	
 	public Obra() {
-		this.codigo = 0;
+		this.codigo = "";
 		this.titulo = "";
 		this.autor = "";
 		this.anoPublicacao = 0;
 		this.status = "";
 	}
-	public Obra(int codigo, String titulo, String autor, int anoPublicacao, String status) {
+	public Obra(String codigo, String titulo, String autor, int anoPublicacao, String status) {
 		this.codigo = codigo;
 		this.titulo = titulo;
 		this.autor = autor;
 		this.anoPublicacao = anoPublicacao;
 		this.status = status;
 	}
-	public int getCodigo() {
+	public String getCodigo() {
 		return codigo;
 	}
-	public void setCodigo(int codigo) {
+	public void setCodigo(String codigo) {
 		this.codigo = codigo;
 	}
 	public String getTitulo() {
@@ -61,5 +61,7 @@ public abstract class Obra {
 	public void setType(String type) {
 	    this.type = type;
 	}
+	public abstract void setEmprestada(boolean b);
+	public abstract boolean isEmprestada();
 }
 	

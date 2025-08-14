@@ -1,3 +1,4 @@
+
 package controller;
 
 import model.Obra;
@@ -34,11 +35,11 @@ public class BibliotecaController {
 
     public Obra buscarPorCodigo(String codigo) {
         for (Obra obra : obras) {
-        	if (Integer.toString(obra.getCodigo()).equalsIgnoreCase(codigo)){
+        	if (obra.getCodigo().equalsIgnoreCase(codigo)){
                 return obra;
             }
         }
         return null;
     }
 }
-//
+

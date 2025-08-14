@@ -1,0 +1,44 @@
+package controller;
+
+import model.Obra;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class BibliotecaController {
+
+    private final List<Obra> obras;
+
+    public BibliotecaController() {
+        this.obras = new ArrayList<Obra>();
+    }
+
+    public void cadastrarObra(Obra obra) {
+        if (obra == null) {
+            throw new IllegalArgumentException("A obra não pode ser nula.");
+        }
+
+        for (Obra o : obras) {
+        	if (o.getCodigo() == obra.getCodigo())
+ {
+                throw new IllegalArgumentException("Já existe uma obra com esse código.");
+            }
+        }
+
+        obras.add(obra);
+    }
+
+    public List<Obra> listarObras() {
+        return new ArrayList<Obra>(obras); 
+    }
+
+    public Obra buscarPorCodigo(String codigo) {
+        for (Obra obra : obras) {
+        	if (Integer.toString(obra.getCodigo()).equalsIgnoreCase(codigo)){
+                return obra;
+            }
+        }
+        return null;
+    }
+}
+//

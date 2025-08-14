@@ -9,7 +9,7 @@ public class Emprestimo {
     private LocalDate dataPrevistaDevolucao;
     private boolean devolvido;
 
-    public Emprestimo(Obra obra, Usuario usuario, LocalDate dataEmprestimo) {
+    public Emprestimo(Obra obra, Usuario usuario, LocalDate dataEmprestimo, LocalDate dataPrevista) {
         this.obra = obra;
         this.usuario = usuario;
         this.dataEmprestimo = dataEmprestimo;
@@ -32,4 +32,13 @@ public class Emprestimo {
     public LocalDate getDataEmprestimo() { return dataEmprestimo; }
     public LocalDate getDataPrevistaDevolucao() { return dataPrevistaDevolucao; }
     public boolean isDevolvido() { return devolvido; }
+
+	public void setDataDevolucao1(LocalDate now) {
+		
+		
+	}
+
+	public void setDataDevolucao(LocalDate now) {
+		
+	}
 }

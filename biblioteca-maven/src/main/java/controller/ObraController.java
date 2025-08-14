@@ -1,26 +1,40 @@
 package controller;
 
-import java.util.ArrayList;
 import model.Obra;
+import java.util.ArrayList;
+import java.util.List;
 
-
-	public class ObraController {
-    private ArrayList<Obra> obras;
+public class ObraController {
+    private List<Obra> obras;
 
     public ObraController() {
-        obras = new ArrayList<Obra>();
+        obras = new ArrayList<>();
     }
 
-    public void cadastrarObra(Obra novaObra) {
-        obras.add(novaObra);
-        System.out.println("Obra cadastrada com sucesso!");
+    public void adicionarObra(Obra obra) {
+        obras.add(obra);
+    }
+
+    public Obra buscarPorCodigo(String codigo) {
+        for (Obra obra : obras) {
+            if (obra.getCodigo().equalsIgnoreCase(codigo)) {
+                return obra;
+            }
+        }
+        return null;
     }
 
     public void listarObras() {
+        if (obras.isEmpty()) {
+            System.out.println("Nenhuma obra cadastrada.");
+            return;
+        }
         for (Obra obra : obras) {
-            System.out.println(obra.getTitulo() + " (" + obra.getClass().getSimpleName() + ")");
+            System.out.println(obra);
         }
     }
-    
-    
+
+    public List<Obra> getObras() {
+        return obras;
+    }
 }

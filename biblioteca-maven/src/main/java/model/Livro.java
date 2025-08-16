@@ -7,7 +7,7 @@ public class Livro extends Obra {
 	}
 
 	public Livro(String codigo, String titulo, String autor, int ano) {
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	@Override
@@ -18,13 +18,14 @@ public class Livro extends Obra {
 
 	@Override
 	public void setEmprestada(boolean b) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
 	@Override
 	public boolean isEmprestada() {
-		// TODO Auto-generated method stub
+	
 		return false;
 	}
 }
+
